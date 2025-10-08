@@ -92,10 +92,10 @@ crewai run
 
 ### ⚙️ 自定义
 - 🔧 修改环境变量 MODEL 以更换该 Crew 使用的 Gemini 模型
-- 🧑‍💻 编辑 src/ai_content_optimization_agent/config/agents.yaml 以调整代理定义
-- 📋 编辑 src/ai_content_optimization_agent/config/tasks.yaml 以调整分配给代理的任务
-- 🛠️ 更新 src/ai_content_optimization_agent/crew.py 以集成其他 AI 模型或加入自定义逻辑与工具
-- ⚡ 编辑 src/ai_content_optimization_agent/main.py 为代理与任务添加自定义输入
+- 🧑‍💻 编辑 `src/ai_content_optimization_agent/config/agents.yaml` 以调整代理定义
+- 📋 编辑 `src/ai_content_optimization_agent/config/tasks.yaml` 以调整分配给代理的任务
+- 🛠️ 更新 `src/ai_content_optimization_agent/crew.py` 以集成其他 AI 模型或加入自定义逻辑与工具
+- ⚡ 编辑 `src/ai_content_optimization_agent/main.py` 为代理与任务添加自定义输入
 
 ---
 
