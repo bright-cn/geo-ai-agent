@@ -1,0 +1,19 @@
+[project]
+name = "ai_content_optimization_agent"
+version = "0.1.0"
+description = "AI Content Optimization using CrewAI"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]>=0.157.0,<1.0.0"
+]
+
+[project.scripts]
+ai_content_optimization_agent = "ai_content_optimization_agent.main:run"
+run_crew = "ai_content_optimization_agent.main:run"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

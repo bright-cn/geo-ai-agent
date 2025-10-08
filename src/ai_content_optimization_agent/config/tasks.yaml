@@ -1,0 +1,42 @@
+scrape_title_task:
+  description: |
+    1. Visit the URL: '{url}'.
+    2. Scrape the page's full content using the Bright Data Web Unlocker tool (using the Markdown data format).
+    3. Locate and extract only the text within the `<h1>` tag. If no `<h1>` tag is present, infer a title from the page content.
+    4. Output the extracted text as a plain string.
+  expected_output: "The plain string containing the extracted text from the specified URL."
+
+google_search_task:
+  description: |
+    1. Use the title from the previous task as your search query.
+    2. Perform a web search using the Google Search tool.
+    3. Return the results from the Google Search tool.
+  expected_output: "The output from the Google Search tool in Markdown format."
+
+main_query_extraction_task:
+  description: |
+    1. From the provided query fan-out, extract the main search query.
+    2. Transform the search query into a concise, Google-like keyphrase that users would type into Google.
+  expected_output: "A short, clear, Google-style search query."
+
+ai_overview_extraction_task:
+  description: |
+    1. Use the search query from the previous task to perform a SERP search on Google via the Bright Data SERP Search tool by setting the `brd_ai_overview` argument to 2.
+    2. Retrieve and return an aggregated Markdown version of the AI Overview section from the search results.
+    3. After all attempts, if none of the responses contain a Google AI Overview, generate one based on the results from the SERP API, and include a note indicating it was generated.
+  expected_output: "The AI Overview section Markdown format (either retrieved from the SERP API or generated if unavailable)."
+
+query_fanout_summarization_task:
+  description: |
+    1. Generate a summary from the query fan-out received as input.
+  expected_output: "A Markdown summary containing the main information from the query fan-out."
+
+compare_ai_overview_task:
+  description: |
+    1. Compare the previously generated summary with the Google AI Overview provided as input.
+    2. Identify patterns and similarities (such as sub-topics or recurring themes), as well as differences between the two sources.
+    3. Generate a list of action items based on the comparison, focusing on topics that appear in both the Google AI Overview and the initial summary.
+    4. Produce a summary table to compare the patterns, similarities, and differences, containing these columns: Aspect, Query Fan-Out Summary, Google AI Overview, Similarities/Patterns, Differences.
+  expected_output: |
+    A comparison report in Markdown that highlights patterns, similarities, and a list of action items derived from the query fan-out.
+    The document must with a summary table presenting the main similarities and differences, and then all remaining content.
